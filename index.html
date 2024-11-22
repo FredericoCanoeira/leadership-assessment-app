@@ -1,48 +1,71 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
-<body>
-    <div class="container">
-        <nav class="sidebar">
-            <h2>Menu</h2>
-            <ul>
-                <li>Autoavaliação</li>
-                <li>Resultados</li>
-                <li>Comparações</li>
-                <li>Histórico</li>
-                <li>Assinaturas</li>
-            </ul>
-        </nav>
-        <main class="main-content">
-            <header class="header">
-                <h1>Bem-vindo ao seu painel de liderança!</h1>
-                <div class="progress-indicator">
-                    <p>Nível: Líder Kilimanjaro</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-            </header>
-                        <section class="autoavaliacao">
-                <h2>Formulário de Autoavaliação</h2>
-                <div class="question-card">
-                    <p id="question">Como você avalia sua capacidade de comunicação?</p>
-                    <div class="scale">
-                        <button onclick="selectRating(1)">1</button>
-                        <button onclick="selectRating(2)">2</button>
-                        <button onclick="selectRating(3)">3</button>
-                        <button onclick="selectRating(4)">4</button>
-                        <button onclick="selectRating(5)">5</button>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" id="progress" style="width: 0%;"></div>
-                    </div>
-                    <div class="navigation-buttons">
-                        <button onclick="previousQuestion()">Voltar</button>
-                        <button onclick="nextQuestion()">Avançar</button>
-                    </div>
-                </div>
-            </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoavaliação de Liderança</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-blue-900 text-white flex flex-col">
+            <div class="p-4 text-2xl font-bold">Liderança</div>
+            <nav class="flex-1">
+                <ul>
+                    <li class="p-4 hover:bg-blue-700"><i class="fas fa-user"></i> Autoavaliação</li>
+                    <li class="p-4 hover:bg-blue-700"><i class="fas fa-chart-bar"></i> Resultados</li>
+                    <li class="p-4 hover:bg-blue-700"><i class="fas fa-exchange-alt"></i> Comparação</li>
+                    <li class="p-4 hover:bg-blue-700"><i class="fas fa-history"></i> Histórico</li>
+                    <li class="p-4 hover:bg-blue-700"><i class="fas fa-crown"></i> Assinaturas</li>
+                </ul>
+            </nav>
+        </div>
 
-    <script src="scripts/script.js"></script>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <header class="bg-white shadow p-4 flex justify-between items-center">
+                <h1 class="text-xl font-bold">Bem-vindo, Líder!</h1>
+                <button class="bg-blue-900 text-white px-4 py-2 rounded">Sair</button>
+            </header>
+
+            <!-- Dashboard -->
+            <main class="flex-1 p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Progress Cards -->
+                    <div class="bg-white p-6 rounded shadow">
+                        <h2 class="text-lg font-bold mb-4">Nível de Liderança</h2>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-900">Kilimanjaro</div>
+                            <div class="text-gray-500">Você está no nível intermediário</div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow">
+                        <h2 class="text-lg font-bold mb-4">Progresso</h2>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-900">75%</div>
+                            <div class="text-gray-500">Conclusão da autoavaliação</div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded shadow">
+                        <h2 class="text-lg font-bold mb-4">Áreas de Liderança</h2>
+                        <ul class="list-disc list-inside">
+                            <li>Comunicação</li>
+                            <li>Gestão de Conflitos</li>
+                            <li>Tomada de Decisão</li>
+                            <li>Visão Estratégica</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
 </body>
 </html>
